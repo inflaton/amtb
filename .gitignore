@@ -1,3 +1,7 @@
+online/
+.vscode/
+.parse*
+
 # Logs
 logs
 *.log
@@ -69,8 +73,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.env.test
+.env*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

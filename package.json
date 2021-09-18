@@ -1,0 +1,42 @@
+{
+  "name": "f4amtf",
+  "version": "1.0.0",
+  "description": "Amitabha V2",
+  "main": "index.js",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.15.5",
+    "amtf-proxy": "^1.2.8",
+    "f4amtf": "^1.0.2",
+    "b4amtf": "^1.0.1",
+    "dotenv-flow": "^3.2.0",
+    "express": "4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "ln -sf `pwd`/.parse* node_modules/f4amtf/web/ && ln -sf `pwd`/.env* node_modules/f4amtf/web/",
+    "build": "cd node_modules/f4amtf/web && npm install && VUE_APP_PARENT_URL=.. VUE_APP_AMITABHA=香光庄严 VUE_APP_PUBLIC_PATH=/online/ npm run build -- --mode $NODE_ENV && mv dist ../online && ../scripts/post-build",
+    "postbuild": "rm -rf online && mv node_modules/f4amtf/online .",
+    "lint": "eslint --cache 'index.js'",
+    "lint-fix": "eslint --cache --fix 'index.js'",
+    "prettier": "prettier --write 'index.js'",
+    "watch": "babel-watch --watch lib index.js"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "babel-watch": "7.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "jest": "^27.1.0",
+    "prettier": "^2.3.2"
+  }
+}
